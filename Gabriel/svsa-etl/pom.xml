@@ -1,0 +1,144 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>svsa-etl</groupId>
+  <artifactId>svsa-etl</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>SvsaAnalytical</name>
+  
+  <packaging>jar</packaging>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<hibernate.version>5.4.2.Final</hibernate.version>
+		<slf4j.version>1.7.10</slf4j.version>
+	</properties>
+	
+	
+	<build>
+		<finalName>svsa-etl</finalName>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.5.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	
+	
+	<dependencies>
+	
+	<!-- Weld (implementação do CDI) -->
+		<dependency>
+			<groupId>org.jboss.weld.servlet</groupId>
+			<artifactId>weld-servlet</artifactId>
+			<version>2.3.1.Final</version>
+		</dependency>
+	
+		<!--  HIBERNATE e Pool de Conexões -->
+				
+		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-c3p0 -->
+		<dependency>
+		    <groupId>org.hibernate</groupId>
+		    <artifactId>hibernate-c3p0</artifactId>
+		    <version>${hibernate.version}</version>
+		</dependency>		
+		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-envers -->
+		<dependency>
+		    <groupId>org.hibernate</groupId>
+		    <artifactId>hibernate-envers</artifactId>
+		    <version>${hibernate.version}</version>
+		</dependency>
+		<!-- Implementacao do Validation -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>6.0.7.Final</version>
+		</dependency>	
+		<!-- Metamodel -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-jpamodelgen</artifactId>
+			<version>5.2.12.Final</version>
+		</dependency>
+		
+
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java 8.0.11-->
+		<dependency>
+		    <groupId>mysql</groupId>
+		    <artifactId>mysql-connector-java</artifactId>
+		    <version>8.0.15</version>
+		</dependency>	
+				
+		<!-- TESTES -->
+
+		<!-- JUnit -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.10</version>
+			<scope>test</scope>
+		</dependency>		
+
+		<!-- Logging com SLF4J  -->
+		
+		<!-- logging -->
+		<dependency>
+		    <groupId>org.slf4j</groupId>
+		    <artifactId>slf4j-api</artifactId>
+		    <version>${slf4j.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.slf4j</groupId>
+		    <artifactId>slf4j-jdk14</artifactId>
+		    <version>${slf4j.version}</version>
+		    <scope>runtime</scope>
+		</dependency>
+		
+		<!-- Google maps -->
+	<dependency>
+		<groupId>com.google.maps</groupId>
+		<artifactId>google-maps-services</artifactId>
+		<version>0.15.0</version>
+	</dependency>
+	<dependency>
+		<groupId>org.slf4j</groupId>
+		<artifactId>slf4j-simple</artifactId>
+		<version>1.7.25</version>
+	</dependency>
+
+	<!-- Joda-Time (para manipulação de temporalidade) -->
+	<dependency>
+		<groupId>joda-time</groupId>
+		<artifactId>joda-time</artifactId>
+		<version>2.10.8</version>
+	</dependency>
+	</dependencies>
+	
+
+	<!-- Repositorio PrimeFaces -->
+	<repositories>
+		<repository>
+			<id>prime-repo</id>
+			<name>PrimeFaces Maven Repository</name>
+			<url>http://repository.primefaces.org</url>
+			<layout>default</layout>
+		</repository>
+
+		<repository>
+			<id>public-jboss</id>
+			<name>public-jboss</name>
+			<url>http://repository.jboss.org/nexus/content/groups/public-jboss/</url>
+		</repository>
+	</repositories>
+
+	<organization>
+		<name>SoftArum</name>
+	</organization>
+	<description>SVSA Analytical</description>
+	
+	
+</project>
